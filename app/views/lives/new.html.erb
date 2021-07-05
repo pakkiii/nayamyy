@@ -1,0 +1,86 @@
+<div class="new-lives-space">
+  <div class="lives-main-space">
+
+    <%= form_with model: @life, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="lives-title-space">
+      <a>Write your Problem</a>
+      <div class="advice-box">
+        <p>今日もお疲れ様です。嫌なことやしんどいことは書き出してみると楽になるかもしれません。<p>
+      </div>
+      <div class="title-space">
+        <div class="title-top-space">
+          <div class="title-box">
+            <%= image_tag 'title.png' , size: '45x45' ,class: "title-icon" %>
+          </div>
+          <p>Title</p>
+        </div>
+        <%= f.text_area :title, class:"title-text", id:"item-info", placeholder: "タイトルを入力してください",rows:"1" ,maxlength:"30" %>
+      </div>
+    </div>
+
+    
+
+    <div class="select-box-space">
+      
+      <div class="select-box-main">
+        <div class="chose-box">
+          <%= image_tag 'time.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <span>HowLong</span>
+        <%= f.collection_select(:how_long_id, HowLong.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+
+      <div class="select-box-main">
+        <div class="chose-box">
+          <%= image_tag 'tired.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <span>Tired</span>
+        <%= f.collection_select(:tired_id, Tired.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+
+      <div class="select-box-main">
+        <div class="chose-box">
+          <%= image_tag 'want.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <span>Want</span>
+        <%= f.collection_select(:want_id, Want.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+
+
+      <div class="select-box-main">
+        <div class="chose-box">
+          <%= image_tag 'season.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <span>Season</span>
+        <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      
+    </div>
+
+    <div class="writing-space">
+      <div class="new-text-space">
+        <div class="text-icon">
+          <%= image_tag 'sad.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <%= f.text_area :bad_thing, class:"lives-text", id:"item-info", placeholder: placeholder,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="new-text-space">
+        <div class="text-icon">
+          <%= image_tag 'hope.png' , size: '60x60' ,class: "select-icon" %>
+        </div>
+        <%= f.text_area :hope, class:"lives-text", id:"item-info", placeholder: badholder ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="new-btn">
+      <%= f.submit "Post" ,class:"post-btn" %>
+      <div class="cansel-space">
+        <%=link_to 'Cansel', root_path, class:"back-btn" %>
+      </div>
+    </div>
+    <% end %>
+    
+    
+  </div>
+</div>

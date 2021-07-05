@@ -1,0 +1,40 @@
+<div class="show-user-space">
+  <div class="user-main-space">
+    <div class="profile-space">
+      <div class="acount-left">
+        <div class="user-image">
+          <% if current_user.sex == 1 %>
+            <i class="fas fa-female"></i>
+          <% elsif current_user.sex == 2 %>
+            <i class="fas fa-male"></i>
+          <% else %>
+            <i class="fas fa-democrat"></i>
+          <% end %>
+        </div>
+        <%= current_user.name%>
+      </div>
+
+      <div class="three-user-content">
+        <%= link_to("#", class: 'user-status') do %>
+          <p>30</p>
+          <span>投稿</span>
+        <% end %>
+        <%= link_to("#", class: 'user-status') do %>
+          <p>30</p>
+          <span>フォロワー</span>
+        <% end %>
+        <%= link_to("#", class: 'user-status') do %>
+          <p>30</p>
+          <span>フォロー中</span>
+        <% end %>
+      </div>
+      
+    </div>
+
+    <div class="my-lives-space">
+      <%= render "shared/lives-card" %>
+    </div>
+  </div>
+  
+
+</div>
