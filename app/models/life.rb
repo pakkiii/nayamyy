@@ -12,6 +12,7 @@ class Life < ApplicationRecord
   with_options presence: true do
     validates :bad_thing
     validates :hope
+    validates :title,  length: { maximum: 40 }
 
     with_options numericality: { other_than: 1 } do
       validates :tired_id

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_040751) do
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "title", null: false
     t.text "bad_thing", null: false
     t.text "hope", null: false
     t.integer "month_id", null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_040751) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.integer "sex", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

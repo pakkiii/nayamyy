@@ -4,6 +4,24 @@
     <%= form_with model: @life, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
+    <div class="lives-title-space">
+      <a>Write your Problem</a>
+      <div class="advice-box">
+        <p>今日もお疲れ様です。嫌なことやしんどいことは書き出してみると楽になるかもしれません。<p>
+      </div>
+      <div class="title-space">
+        <div class="title-top-space">
+          <div class="title-box">
+            <%= image_tag 'title.png' , size: '45x45' ,class: "title-icon" %>
+          </div>
+          <p>Title</p>
+        </div>
+        <%= f.text_area :title, class:"title-text", id:"item-info", placeholder: "タイトルを入力してください",rows:"1" ,maxlength:"30" %>
+      </div>
+    </div>
+
+    
+
     <div class="select-box-space">
       
       <div class="select-box-main">

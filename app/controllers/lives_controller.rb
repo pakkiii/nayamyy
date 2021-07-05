@@ -20,7 +20,7 @@ class LivesController < ApplicationController
 
   private
   def life_params
-    params.require(:life).permit(:bad_thing, :hope, :tired_id, :how_long_id, :want_id, :month_id).merge(user_id: current_user.id)
+    params.require(:life).permit(:title, :bad_thing, :hope, :tired_id, :how_long_id, :want_id, :month_id).merge(user_id: current_user.id)
   end
 
 

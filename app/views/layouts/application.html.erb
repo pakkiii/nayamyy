@@ -4,6 +4,7 @@
     <title>Life Count</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,7 +27,9 @@
     <%= yield %>
   </body>
   <footer>
-    <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
+    <%= link_to("/", class: 'top-icon-btn') do %>
+      <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
+    <% end %>
     <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
     <%= link_to("/users/#{current_user.id}", class: 'top-icon-btn') do %>
       <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>

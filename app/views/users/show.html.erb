@@ -3,7 +3,13 @@
     <div class="profile-space">
       <div class="acount-left">
         <div class="user-image">
-          <%= image_tag 'acount.png' , size: '140x140' ,class: "acount-icon" %>
+          <% if current_user.sex == 1 %>
+            <i class="fas fa-female"></i>
+          <% elsif current_user.sex == 2 %>
+            <i class="fas fa-male"></i>
+          <% else %>
+            <i class="fas fa-democrat"></i>
+          <% end %>
         </div>
         <%= current_user.name%>
       </div>
@@ -26,11 +32,7 @@
     </div>
 
     <div class="my-lives-space">
-      <% @lives.each do |life| %>
-        <div class=lives-card>
-          <%= life.tired.name%>
-        </div>
-      <% end %>
+      <%= render "shared/lives-card" %>
     </div>
   </div>
   

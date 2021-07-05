@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :lives, dependent: :destroy
 
   validates :name, presence: true
+  with_options numericality: { other_than: 0 } do
+    validates :sex
+  end
 end

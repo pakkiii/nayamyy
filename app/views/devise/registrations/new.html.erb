@@ -14,6 +14,11 @@
           <div class='field-input'>
             <%= f.text_field :name, autofocus: true%>
           </div>
+          <div class="field">
+            <%= f.radio_button :sex, 1 %>男
+            <%= f.radio_button :sex, 2 %>女
+            <%= f.radio_button :sex, 3 %>選択しない
+          </div>
         </div>
         <div class='field'>
           <div class='field-label'>
