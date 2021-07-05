@@ -1,0 +1,38 @@
+<div class="show-lives-space">
+  <div class="lives-main-space">
+    <div class="title-lives-box">
+      <%= @life.title %>
+    </div>
+    <div class="lives-category-box">
+      <div class="lives-category">
+        <p>あとどのくらい気持ちが持ちそうか</p>
+        <%= @life.how_long.name%>
+      </div>
+      <div class="lives-category">
+        <%= @life.tired.name%>
+      </div>
+      <div class="lives-category">
+        <%= @life.month.name%>
+      </div>
+    </div>
+    <div class="lives-text-box">
+      <div class="lives-double-text">
+        <%= @life.bad_thing%>
+      </div>
+      <div class="lives-double-text">
+        <%= @life.hope%>
+      </div>
+    </div>
+    <div class="lives-comment-box">
+      <%= link_to "削除", life_path(@life.id), method: :delete, class:"item-destroy" %>
+    </div>
+    <div class="test">
+      <div class="test-1">
+      </div>
+    </div>
+
+
+
+  </div>
+  
+</div>

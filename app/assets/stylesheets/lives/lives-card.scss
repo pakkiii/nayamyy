@@ -5,7 +5,56 @@
   border-radius: 5px;
   border: solid 2px rgb(99, 99, 99);
   margin: 10px 1.25% ;
+  text-decoration: none;
   position: relative;
+}
+
+.lives-card:hover .lives-text-show {
+  height: 270px;
+  width: 115%;
+  background-color: rgb(98, 255, 106);
+  border-radius: 5px;
+  border: solid 4px rgb(104, 104, 104);
+  position: absolute; top: -10px; left: -10px;
+  transition: 0.2s;
+}
+
+.lives-card:hover .lives-text-second {
+  color: black;
+  margin-top: 20px;
+  width: 100%;
+  font-size: large;
+  border-bottom: solid gray;
+}
+
+.lives-card:hover .lives-show-mark {
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
+  font-size: 30px;
+
+}
+
+.lives-show-mark {
+  color: rgba(0, 0, 0, 0);
+}
+
+.lives-text-second {
+  color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+.lives-card-space {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -39,7 +88,7 @@
 }
 
 .card-3 {
-  width: 40%;
+  width: 100px;
   height: 25px;
   position: absolute; bottom: 2px; right: 2px;
   text-align: center;

@@ -5,6 +5,10 @@ class LivesController < ApplicationController
   def index
   end
 
+  def show
+    @life = Life.find(params[:id])
+  end
+
   def new
     @life = Life.new
   end
@@ -16,6 +20,12 @@ class LivesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @life = Life.find(params[:id])
+    @life.destroy
+    redirect_to root_path
   end
 
   private
