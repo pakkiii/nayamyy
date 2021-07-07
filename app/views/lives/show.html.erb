@@ -2,6 +2,10 @@
   <div class="lives-main-space">
     <div class="title-lives-box">
       <%= @life.title %>
+      <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
+        投稿者
+        <%= @life.user.name%>さん
+      <% end %>
     </div>
     <div class="lives-category-box">
       <div class="lives-category">

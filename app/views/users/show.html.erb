@@ -3,15 +3,38 @@
     <div class="profile-space">
       <div class="acount-left">
         <div class="user-image">
-          <% if current_user.sex == 1 %>
+          <% if @user.sex == 1 %>
             <i class="fas fa-female"></i>
-          <% elsif current_user.sex == 2 %>
+          <% elsif @user.sex == 2 %>
             <i class="fas fa-male"></i>
           <% else %>
             <i class="fas fa-democrat"></i>
           <% end %>
         </div>
-        <%= current_user.name%>
+        
+        <div class="user-show-box">
+
+          <% if current_user.id == @user.id %>
+            <div class="follow-box">
+              My page
+            </div>
+          <% else %>
+            <div class='other-acount-name'><%= @user.name %>様の投稿一覧</div>
+            <div class="follow-box-2">
+              <% if current_user.following?(@user) %>
+                <%= button_to relationship_path(current_user.relationships.find_by(follower: @user.id)), method: :delete, class: "follow-btn" do %>
+                  フォロー中
+                <% end %>
+              <% else %>
+                <%= button_to relationships_path(follower: @user), class: "follow-btn" do %>
+                  フォローする
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+        
       </div>
 
       <div class="three-user-content">

@@ -13,7 +13,7 @@
 
 .profile-space {
   width: 100%;
-  height: 200px;
+  height: 400px;
   background-color: rgb(202, 202, 202);
   display: flex;
   justify-content: space-around;
@@ -23,6 +23,9 @@
 .acount-left {
   font-size: large;
   font-weight: bold;
+  height: 100%;
+  width: 40%;
+
 }
 
 .user-image {
@@ -31,10 +34,54 @@
   background-color: rgb(255, 255, 255);
   border: solid 2px rgb(121, 121, 121);
   border-radius: 100%;
-  margin-left: 30px;
+  margin: 0 auto;
   font-size: 140px;
   text-align: center;
 }
+
+.user-show-box {
+  height: 180px;
+  width: 100%;
+}
+
+.other-acount-name {
+  width: 200px;
+  height: 30px;
+  margin: 30px auto;
+  text-align: center;
+  border-bottom: solid 2px gray;
+
+}
+
+.follow-box {
+  width: 180px;
+  height: 40px;
+  background-color: rgb(0, 255, 106);
+  border-radius: 5px;
+  margin: 40px auto;
+  border: solid 2px gray;
+  text-align: center;
+  font-size: x-large;
+}
+
+
+.follow-box-2 {
+  width: 180px;
+  height: 40px;
+  margin: 40px auto;
+}
+
+.follow-btn {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(0, 255, 106);
+  border-radius: 5px;
+  border: solid 2px gray;
+  text-align: center;
+  font-size: x-large;
+}
+
+
 
 
 
@@ -62,7 +109,6 @@
 }
 
 .my-lives-space {
-  margin-top: 200px;
   width: 100%;
   height: 600px;
   background-color: rgb(202, 202, 202);

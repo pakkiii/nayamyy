@@ -3,6 +3,7 @@ class LivesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
 
   def index
+    @lives = Life.all.order("created_at DESC")
   end
 
   def show

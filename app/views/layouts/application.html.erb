@@ -14,6 +14,7 @@
     <div class="app-icon-box">
       <%= link_to 'Life Count', "/", class: "app-title" %>
     </div>
+    <%= link_to 'ログアウト' ,destroy_user_session_path, method: :delete, class: "logout" %>
     <div class="left-icon">
       <%= link_to(new_life_path, class: 'top-icon-btn') do %>
         <%= image_tag 'new-lives.png' , size: '50x50' ,class: "top-icon" %>
@@ -27,12 +28,22 @@
     <%= yield %>
   </body>
   <footer>
-    <%= link_to("/", class: 'top-icon-btn') do %>
-      <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
-    <% end %>
-    <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
-    <%= link_to("/users/#{current_user.id}", class: 'top-icon-btn') do %>
-      <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
+    <% if user_signed_in? %>
+      <%= link_to("/", class: 'top-icon-btn') do %>
+        <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
+      <% end %>
+      <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+      <%= link_to("/users/#{current_user.id}", class: 'top-icon-btn') do %>
+        <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
+      <% end %>
+    <% else %>
+      <%= link_to("/", class: 'top-icon-btn') do %>
+        <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
+      <% end %>
+      <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+      <%= link_to("/", class: 'top-icon-btn') do %>
+        <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
+      <% end %>
     <% end %>
   </footer>
 </html>
