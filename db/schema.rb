@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_040751) do
+ActiveRecord::Schema.define(version: 2021_07_06_010842) do
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -40,5 +40,17 @@ ActiveRecord::Schema.define(version: 2021_06_30_040751) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "yells", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content", null: false
+    t.bigint "life_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["life_id"], name: "index_yells_on_life_id"
+    t.index ["user_id"], name: "index_yells_on_user_id"
+  end
+
   add_foreign_key "lives", "users"
+  add_foreign_key "yells", "lives"
+  add_foreign_key "yells", "users"
 end

@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: 'lives#index'
 
   resources :users, only: [:edit, :update, :show]
-  resources :lives
+  
+  resources :lives do
+    resources :yells, only: [:index, :create, :destroy] 
+  end
+
 end

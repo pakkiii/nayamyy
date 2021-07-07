@@ -20,4 +20,15 @@ module NewHelper
     EOS
   end
 
+  def yellholder
+    <<-"EOS".strip_heredoc
+    
+    相手を思いやるエールを送ってみましょう。
+    もちろんですが、暴言や心ないコメントは厳禁です！
+    
+    また本当に疲れている人の投稿には「がんばれ！」もお控えください。
+    
+    EOS
+  end
+
 end

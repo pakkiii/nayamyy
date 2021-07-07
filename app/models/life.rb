@@ -2,6 +2,7 @@ class Life < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :user
+  has_many :yells, dependent: :destroy
 
   belongs_to :how_long
   belongs_to :month

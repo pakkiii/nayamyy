@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :lives, dependent: :destroy
+  has_many :yells
 
   validates :name, presence: true
   with_options numericality: { other_than: 0 } do
