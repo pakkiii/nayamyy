@@ -23,13 +23,30 @@
         <%= @life.hope%>
       </div>
     </div>
+    
     <div class="lives-comment-box">
-      <%= link_to "削除", life_path(@life.id), method: :delete, class:"item-destroy" %>
-    </div>
-    <div class="test">
-      <div class="test-1">
+      <%= form_with model: [@life, @yell], class: 'yell-form', id: "form", local: true do |f| %>
+        <div class="errors-box">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
+        <div class="form-input">
+          <%= f.text_area :content, class: 'form-yell', placeholder: yellholder, rows:"7", id: "content" %>
+        </div>
+        <%= f.submit '送信', class: 'yell-submit', id: "submit" %>
+      <% end %>
+      <div class="yell-lists">
+        <% @yells.each do |yell| %>
+          <div class="yell-content">
+            <%= yell.content%>
+            <div class="yell-created">
+              <%= time_ago_in_words(yell.created_at) %>前
+            </div>
+          </div>
+        <% end %>
       </div>
+      
     </div>
+    
 
 
 
