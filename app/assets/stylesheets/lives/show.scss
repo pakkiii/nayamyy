@@ -14,7 +14,55 @@
 .title-lives-box {
   width: 100%;
   height: 100px;
-  background-color: blanchedalmond;
+  background-color: rgb(202, 202, 202);
+  font-size: x-large;
+  display: flex;
+  justify-content: space-between;
+}
+
+.life-title-left {
+  width: 70%;
+  height: 100%;
+}
+
+.life-title-text {
+  font-size: xx-large;
+  color: rgb(43, 43, 43);
+}
+
+.life-title-owner {
+  color: rgb(43, 43, 43);
+}
+
+.owner-pass {
+  text-decoration: none;
+  color: rgb(43, 43, 43);
+}
+
+.life-title-right {
+  width: 30%;
+  height: 100%;
+}
+
+.like-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 60px;
+  border-style: none;
+  border-radius: 100%;
+  background-color: rgb(202, 202, 202);
+  color: rgb(9, 255, 0);
+  margin: 0 0 0 auto;
+}
+
+.cansel-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 60px;
+  color: rgb(97, 97, 97);
+  border-style: none;
+  border-radius: 100%;
+  background-color: rgb(202, 202, 202);
 }
 
 .lives-category-box {

@@ -57,6 +57,12 @@
     <div class="my-lives-space">
       <%= render "shared/lives-card" %>
     </div>
+    <div class="main">
+      <label class="text-user">日別会員登録者数 (総会員数 : <%= @users.count %>)</label>
+      <div class="graph">
+        <%= line_chart @users_count, download: true, colors: ['#FF4F02'] %>
+      </div>
+    </div>
   </div>
   
 

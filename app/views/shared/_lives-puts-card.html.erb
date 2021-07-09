@@ -1,0 +1,195 @@
+<% @lives.first(8).each do |life| %>
+
+  <% if life.tired_id == 2 %>
+
+    <div class=lives-card>
+      <div class="lives-card-space">
+        <div class="card-1">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="card-2">
+          <div class="card-2-title">
+            <p>Title</p>
+          </div>
+          <div class="card-2-title-2">
+            <%= life.title.truncate(10)%>
+          </div>
+        </div>
+        <div class="card-3">
+          <%= time_ago_in_words(life.created_at) %>前
+        </div>
+      </div>
+      <%= link_to life_path(life.id), {class: "nav-link"} do %>
+        <div class="lives-text-show">
+          <div class="lives-show-mark">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="lives-text-second">
+            <p>悩み</p>
+            <%= life.bad_thing.truncate(15) %>
+          </div>
+          <div class="lives-text-second">
+            <p>嬉しいこと</p>
+            <%= life.hope.truncate(15) %>
+          </div>
+        </div>
+      <% end %>
+      
+    </div>
+
+  <% elsif life.tired_id == 3 %>
+
+    <div class=lives-card>
+      <div class="lives-card-space">
+        <div class="card-1">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="card-2">
+          <div class="card-2-title">
+            <p>Title</p>
+          </div>
+          <div class="card-2-title-2">
+            <%= life.title.truncate(10)%>
+          </div>
+        </div>
+        <div class="card-3">
+          <%= time_ago_in_words(life.created_at) %>前
+        </div>
+      </div>
+      <%= link_to life_path(life.id), {class: "nav-link"} do %>
+        <div class="lives-text-show">
+          <div class="lives-show-mark">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="lives-text-second">
+            <p>悩み</p>
+            <%= life.bad_thing.truncate(15) %>
+          </div>
+          <div class="lives-text-second">
+            <p>嬉しいこと</p>
+            <%= life.hope.truncate(15) %>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+    
+  <% elsif life.tired_id == 4 %>
+
+    <div class=lives-card>
+
+      <div class="lives-card-space">
+        <div class="card-1">
+          <i class="fas fa-school"></i>
+        </div>
+        <div class="card-2">
+          <div class="card-2-title">
+            <p>Title</p>
+          </div>
+          <div class="card-2-title-2">
+            <%= life.title.truncate(10)%>
+          </div>
+        </div>
+        <div class="card-3">
+          <%= time_ago_in_words(life.created_at) %>前
+        </div>
+      </div>
+      <%= link_to life_path(life.id), {class: "nav-link"} do %>
+        <div class="lives-text-show">
+          <div class="lives-show-mark">
+            <i class="fas fa-school"></i>
+          </div>
+          <div class="lives-text-second">
+            <p>悩み</p>
+            <%= life.bad_thing.truncate(15) %>
+          </div>
+          <div class="lives-text-second">
+            <p>嬉しいこと</p>
+            <%= life.hope.truncate(15) %>
+          </div>
+          
+        </div>
+      <% end %>
+
+    </div>
+
+  <% elsif life.tired_id == 5 %>
+
+    <div class=lives-card>
+      <div class="lives-card-space">
+        <div class="card-1">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="card-2">
+          <div class="card-2-title">
+            <p>Title</p>
+          </div>
+          <div class="card-2-title-2">
+            <%= life.title.truncate(10)%>
+          </div>
+          
+        </div>
+        <div class="card-3">
+          <%= time_ago_in_words(life.created_at) %>前
+        </div>
+      </div>
+      <%= link_to life_path(life.id), {class: "nav-link"} do %>
+        <div class="lives-text-show">
+          <div class="lives-show-mark">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="lives-text-second">
+            <p>悩み</p>
+            <%= life.bad_thing.truncate(15) %>
+          </div>
+          <div class="lives-text-second">
+            <p>嬉しいこと</p>
+            <%= life.hope.truncate(15) %>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+
+
+  <% elsif life.tired_id == 6 %>
+
+    <div class=lives-card>
+      <div class="lives-card-space">
+        <div class="card-1">
+          <i class="fas fa-otter"></i>
+        </div>
+        <div class="card-2">
+          <div class="card-2-title">
+            <p>Title</p>
+          </div>
+          <div class="card-2-title-2">
+            <%= life.title.truncate(10)%>
+          </div>
+          
+        </div>
+        <div class="card-3">
+          <%= time_ago_in_words(life.created_at) %>前
+        </div>
+      </div>
+      <%= link_to life_path(life.id), {class: "nav-link"} do %>
+        <div class="lives-text-show">
+          <div class="lives-show-mark">
+            <i class="fas fa-otter"></i>
+          </div>
+          <div class="lives-text-second">
+            <p>悩み</p>
+            <%= life.bad_thing.truncate(15) %>
+          </div>
+          <div class="lives-text-second">
+            <p>嬉しいこと</p>
+            <%= life.hope.truncate(15) %>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+<% end %>

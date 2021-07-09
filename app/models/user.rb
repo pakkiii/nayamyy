@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :lives, dependent: :destroy
   has_many :yells
 
+  has_many :likes, dependent: :destroy
+  has_many :liked_lives, through: :likes, source: :life
+
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follower
 
@@ -26,6 +29,10 @@ class User < ApplicationRecord
 
   def unfollow(relathinoship_id)
     relationships.find(relathinoship_id).destroy!
+  end
+
+  def already_liked?(life)
+    self.likes.exists?(life_id: life.id)
   end
 
   

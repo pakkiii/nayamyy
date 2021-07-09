@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_031442) do
+ActiveRecord::Schema.define(version: 2021_07_07_070114) do
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "life_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["life_id"], name: "index_likes_on_life_id"
+    t.index ["user_id", "life_id"], name: "index_likes_on_user_id_and_life_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -60,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_07_07_031442) do
     t.index ["user_id"], name: "index_yells_on_user_id"
   end
 
+  add_foreign_key "likes", "lives"
+  add_foreign_key "likes", "users"
   add_foreign_key "lives", "users"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "yells", "lives"

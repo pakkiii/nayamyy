@@ -1,11 +1,40 @@
 <div class="show-lives-space">
   <div class="lives-main-space">
     <div class="title-lives-box">
-      <%= @life.title %>
-      <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
-        投稿者
-        <%= @life.user.name%>さん
-      <% end %>
+      <div class="life-titile-left">
+        <div class="life-title-text">タイトル：<%= @life.title %></div>
+        <div class="life-title-owner">
+          投稿者:
+          <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
+            <%= @life.user.name%>
+          <% end %>
+        </div>
+      </div>
+      <div class="life-title-right">
+        <% if current_user.id == @life.user.id %>
+          <div class="me-to-count">
+            <h1>共感されたユーザー</h1><%= @life.likes.count %><h1>人</h1>
+          </div>
+        <% else %>
+          <% if current_user.already_liked?(@life) %>
+            <%= button_to life_like_path(@life), method: :delete, class: "like-icon"  do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= button_to life_likes_path(@life), class: "cansel-icon" do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="lives-text-box">
+      <div class="lives-double-text">
+        <%= @life.bad_thing%>
+      </div>
+      <div class="lives-double-text">
+        <%= @life.hope%>
+      </div>
     </div>
     <div class="lives-category-box">
       <div class="lives-category">
@@ -19,14 +48,7 @@
         <%= @life.month.name%>
       </div>
     </div>
-    <div class="lives-text-box">
-      <div class="lives-double-text">
-        <%= @life.bad_thing%>
-      </div>
-      <div class="lives-double-text">
-        <%= @life.hope%>
-      </div>
-    </div>
+    
     
     <div class="lives-comment-box">
       <%= form_with model: [@life, @yell], class: 'yell-form', id: "form", local: true do |f| %>

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   
   resources :lives do
-    resources :yells, only: [:index, :create, :destroy] 
+    resources :yells, only: [:index, :create, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 
 end
