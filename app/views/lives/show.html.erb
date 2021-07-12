@@ -2,12 +2,23 @@
   <div class="lives-main-space">
     <div class="title-lives-box">
       <div class="life-titile-left">
-        <div class="life-title-text">タイトル：<%= @life.title %></div>
+        <div class="life-title-text">
+          <div class="title-1">
+            Title:
+          </div>
+          <div class="title-2">
+            <%= @life.title.truncate(10) %>
+          </div>
+        </div>
         <div class="life-title-owner">
-          投稿者:
-          <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
-            <%= @life.user.name%>
-          <% end %>
+          <% if current_user.id == @life.user.id %>
+          過去の投稿
+          <% else %>
+            投稿者:
+            <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
+              <%= @life.user.name%>
+            <% end %>
+          <%end%>
         </div>
       </div>
       <div class="life-title-right">
@@ -29,12 +40,41 @@
       </div>
     </div>
     <div class="lives-text-box">
+
+
+
+
+
+
       <div class="lives-double-text">
-        <%= @life.bad_thing%>
+        <div class="top-double">
+          <div class="lives-text-titile">
+            <%= image_tag 'sading.png' , size: '50x50' ,class: "top-icon" %>
+          </div>
+          <div class="lives-title-big">
+            Problem
+          </div>
+        </div>
+          <a class="lives-text-under"><%= @life.bad_thing%></a>
       </div>
+
       <div class="lives-double-text">
-        <%= @life.hope%>
+        <div class="top-double">
+          <div class="lives-text-titile">
+            <%= image_tag 'happy.png' , size: '50x50' ,class: "top-icon" %>
+          </div>
+          <div class="lives-title-vig">
+            mini happy
+          </div>
+        </div>
+          <a class="lives-text-under"><%= @life.bad_thing%></a>
       </div>
+
+
+
+
+
+
     </div>
     <div class="lives-category-box">
       <div class="lives-category">

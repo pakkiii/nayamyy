@@ -68,7 +68,7 @@
 }
 
 .card-2 {
-  margin-top: 20px;
+  margin-top: 1px;
   margin-left: 20px;
   width: 80%;
   height: 100px;
@@ -88,6 +88,21 @@
 }
 
 .card-3 {
+  margin-left: 20px;
+  width: 80%;
+  height: 55px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.card-comment {
+  width: 40%;
+  height: 100%;
+}
+
+.card-4 {
   width: 100px;
   height: 25px;
   position: absolute; bottom: 2px; right: 2px;

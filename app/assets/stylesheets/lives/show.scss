@@ -20,14 +20,34 @@
   justify-content: space-between;
 }
 
-.life-title-left {
+.life-titile-left {
   width: 70%;
   height: 100%;
+  background-color: aqua;
 }
 
 .life-title-text {
-  font-size: xx-large;
   color: rgb(43, 43, 43);
+  height: 65px;
+  width: 800px;
+  background-color: azure;
+  border-radius: 6px;
+  border: solid 3px gray;
+  display: flex;
+}
+
+.title-1 {
+  height: 100%;
+  width: 14%;
+  background-color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.title-2 {
+  font-size: 40px;
+  width: 86%;
 }
 
 .life-title-owner {
@@ -68,7 +88,7 @@
 .lives-category-box {
   width: 100%;
   height: 200px;
-  background-color: burlywood;
+  background-color: rgb(189, 189, 189);
   display: flex;
   justify-content: space-between;
 }
@@ -91,11 +111,52 @@
 
 .lives-double-text {
   width: 40%;
-  height: 70%;
-  background-color: chocolate;
+  height: 400px;
+  background-color: rgb(158, 158, 158);
   margin: 20px 5%;
   overflow: scroll;
   -ms-overflow-style: none;
+  border-radius: 6px;
+  font-size: large;
+  color: rgb(44, 44, 44);
+  border: solid 3px gray;
+}
+
+.top-double {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: azure;
+}
+
+.lives-title-big {
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+
+.lives-title-vig {
+  padding-top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+
+
+.lives-text-titile {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(80, 80, 80);
+  padding: 10px;
+}
+
+.lives-text-under {
+  border-bottom: solid 3px gray;
+  padding-bottom: 4px;
+  font-size: larger;
+  color: rgb(233, 233, 233);
 }
 
 .lives-double-text::-webkit-scrollbar {  

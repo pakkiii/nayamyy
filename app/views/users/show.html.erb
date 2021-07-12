@@ -12,6 +12,7 @@
           <% end %>
         </div>
         
+        
         <div class="user-show-box">
 
           <% if current_user.id == @user.id %>
@@ -39,15 +40,15 @@
 
       <div class="three-user-content">
         <%= link_to("#", class: 'user-status') do %>
-          <p>30</p>
+          <p><%= @lives.count%></p>
           <span>投稿</span>
         <% end %>
         <%= link_to("#", class: 'user-status') do %>
-          <p>30</p>
+          <p><%= @user.passive_relationships.count%></p>
           <span>フォロワー</span>
         <% end %>
         <%= link_to("#", class: 'user-status') do %>
-          <p>30</p>
+          <p><%= @user.followings.count%></p>
           <span>フォロー中</span>
         <% end %>
       </div>
