@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        sex: 性別
+        name: ユーザー名
+      life:
+        bad_thing: つらいこと
+        hope: 感謝できること
+        tired_id: しんどいカテゴリー
+        want_id: 今一番したいこと
+        how_long_id: ライフがどれくらいもちそうか
+        month_id: どの季節が近いか
+        title: タイトル
+      yell:
+        content: コメント
+        contain_blacklist_words: 禁止ワード

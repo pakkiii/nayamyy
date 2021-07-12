@@ -8,7 +8,7 @@ class Yell < ApplicationRecord
   def body_cannot_blacklist_words
     blacklist = ['死ね', '馬鹿']
     if content.present? && blacklist.any?{ |word| content.include?(word) }
-      errors.add(:contain_blacklist_words, ": 禁止単語が含まれています。")
+      errors.add(:contain_blacklist_words, "が含まれています。")
     end
   end
 
