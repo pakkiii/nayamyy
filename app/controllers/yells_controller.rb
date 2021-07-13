@@ -1,12 +1,15 @@
 class YellsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
+  before_action :set_lives, only: [:create, :destroy]
+
   def create
     @yell = Yell.new(yell_params)
     @yell.user_id = current_user.id
     if @yell.save
-      redirect_back(fallback_location: root_path)
+      redirect_to life_path(params[:life_id])
     else
-      redirect_back(fallback_location: root_path)
+      @yells = @life.yells
+      render 'lives/show'
     end
 
   end
@@ -18,13 +21,18 @@ class YellsController < ApplicationController
 
   end
 
-  def index
 
-  end
 
   
 
   private
+
+
+  def set_lives
+    @life = Life.find(params[:life_id])
+  end
+
+
   def yell_params
     params.require(:yell).permit(:content).merge(user_id: current_user.id, life_id: params[:life_id])
   end

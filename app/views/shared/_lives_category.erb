@@ -1,0 +1,52 @@
+<div class="lives-category-zone">
+  <div class="lives-category">
+    <% if @life.how_long_id <= 3 %>
+      Level 3
+      <%= image_tag 'level2.png' , size: '30x30' ,class: "top-icon" %>
+    <% elsif @life.how_long_id <= 5 %>
+      Level 2
+      <%= image_tag 'level1.png' , size: '30x30' ,class: "top-icon" %>
+    <% else %>
+      Level 1
+      <%= image_tag 'normal.png' , size: '30x30' ,class: "top-icon" %>
+    <% end %>
+    
+  </div>
+
+  <div class="lives-category">
+    Season
+    <% if @life.month_id == 2 %>
+      <%= image_tag 'winter.png' , size: '30x30' ,class: "top-icon" %>
+      
+    <% elsif @life.month_id == 3 %>
+      <%= image_tag 'spring.png' , size: '30x30' ,class: "top-icon" %>
+      
+    <% elsif @life.month_id == 4 %>
+    <%= image_tag 'summer.png' , size: '30x30' ,class: "top-icon" %>
+
+    <% elsif @life.month_id == 5 %>
+    <%= image_tag 'awsome.png' , size: '30x30' ,class: "top-icon" %>
+
+    <% else %>
+    <%= image_tag 'month_another.png' , size: '30x30' ,class: "top-icon" %>
+      
+    <% end %>
+  </div>
+
+
+  <div class="lives-category">
+    Type
+    <% if life.tired_id == 2%>
+      <i class="fas fa-home"></i>
+    <%elsif life.tired_id ==3 %>
+      <i class="fas fa-briefcase"></i>
+    <%elsif life.tired_id ==4 %>
+      <i class="fas fa-school"></i>
+    <%elsif life.tired_id ==5 %>
+      <i class="fas fa-briefcase"></i>
+    <%elsif life.tired_id ==6 %>
+      <i class="fas fa-otter"></i>
+    <% end %>
+
+  </div>
+</div>

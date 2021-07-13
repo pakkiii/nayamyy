@@ -30,7 +30,20 @@
 
   <header>
     <div class="app-icon-box">
-      <%= link_to 'Life Count', "/", class: "app-title" %>
+      <%= link_to( "/", class: "app-title" ) do %>
+        <h1 class="title">
+          <span>L</span>
+          <span>i</span>
+          <span>f</span>
+          <span>e</span>
+          <span>&nbsp;</span>
+          <span>C</span>
+          <span>o</span>
+          <span>u</span>
+          <span>n</span>
+          <span>t</span>
+        </h1>
+      <% end %>
     </div>
     <%= link_to 'ログアウト' ,destroy_user_session_path, method: :delete, class: "logout" %>
     <div class="left-icon">

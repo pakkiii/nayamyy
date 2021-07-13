@@ -12,7 +12,7 @@
         </div>
         <div class="life-title-owner">
           <% if current_user.id == @life.user.id %>
-          過去の投稿
+          <p class="sub-text-a">過去の悩み</p>
           <% else %>
             投稿者:
             <%= link_to  "/users/#{@life.user.id}", class: "owner-pass" do %>
@@ -20,23 +20,6 @@
             <% end %>
           <%end%>
         </div>
-      </div>
-      <div class="life-title-right">
-        <% if current_user.id == @life.user.id %>
-          <div class="me-to-count">
-            <h1>共感されたユーザー</h1><%= @life.likes.count %><h1>人</h1>
-          </div>
-        <% else %>
-          <% if current_user.already_liked?(@life) %>
-            <%= button_to life_like_path(@life), method: :delete, class: "like-icon"  do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
-          <% else %>
-            <%= button_to life_likes_path(@life), class: "cansel-icon" do %>
-              <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
-        <% end %>
       </div>
     </div>
     <div class="lives-text-box">
@@ -77,15 +60,24 @@
 
     </div>
     <div class="lives-category-box">
-      <div class="lives-category">
-        <p>あとどのくらい気持ちが持ちそうか</p>
-        <%= @life.how_long.name%>
-      </div>
-      <div class="lives-category">
-        <%= @life.tired.name%>
-      </div>
-      <div class="lives-category">
-        <%= @life.month.name%>
+      <%= render partial: 'shared/lives_category', locals: { life: @life } %>
+      <div class="life-title-right">
+        <% if current_user.id == @life.user.id %>
+          <div class="me-to-count">
+            <i class="far fa-heart"></i>
+            <%= @life.likes.count %>
+          </div>
+        <% else %>
+          <% if current_user.already_liked?(@life) %>
+            <%= button_to life_like_path(@life), method: :delete, class: "like-icon"  do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= button_to life_likes_path(@life), class: "cansel-icon" do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     
