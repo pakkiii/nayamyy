@@ -1,0 +1,54 @@
+<div class="dm-got">
+  <div class="dm-main">
+
+
+    <div class="dm-acount-name">
+      <% @entries.each do |e| %>
+        <% if e.user.id != current_user.id %>
+          <a class="dm-acount-font", href="/users/<%= e.user.id %>"><%= e.user.name%>とのroom</a>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="dm-parent">
+
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% if m.user.id == current_user.id %>
+            <div class="another-acount-box">
+              <div class="test-99">
+                <div class="another-acount-space">
+                  <p><%= m.content %></p>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="current-space">
+              <div class="current-box">
+                <p><%= m.content %></p>
+              </div>
+            </div>
+          <% end %>
+
+        <% end %>
+      <% else %>
+        <h3 class="text-center">メッセージはまだありません</h3>
+      <% end %>
+
+    </div>
+
+
+    <div class="dm-zone">
+      <%= form_with model: @message, class: "dm-bos", local: true do |f| %>
+        <%= f.text_area :content, placeholder: "メッセージを入力して下さい" , class: "dm-text-space",rows:"7", maxlength:"1000"   %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= button_tag type:'submit', class: "dm-submit-btn" do %>
+          <i class="fab fa-telegram-plane"></i>
+          <p>Send message!</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

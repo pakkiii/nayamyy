@@ -31,8 +31,19 @@
                   フォローする
                 <% end %>
               <% end %>
+              <% if @isRoom == true %>
+                <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, :value=> @user.id %>
+                  <% end %>
+                  <%= f.submit "チャットを始める" %>
+                <% end %>
+              <% end %>
             </div>
           <% end %>
+          
         </div>
 
         
@@ -64,6 +75,16 @@
         <%= line_chart @users_count, download: true, colors: ['#FF4F02'] %>
       </div>
     </div>
+
+    <div class="test-4">
+      
+      <% if current_user.following?(@user) && @user.following?(current_user) %>
+        お互いフォロー
+      <% else %>
+        そうでもないよ
+      <% end %>
+    </div>
+    
   </div>
   
 

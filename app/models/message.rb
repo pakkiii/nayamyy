@@ -1,6 +1,6 @@
-class Yell < ApplicationRecord
-  belongs_to :user  
-  belongs_to :life
+class Message < ApplicationRecord
+  belongs_to :user
+  belongs_to :room
 
   validate :body_cannot_blacklist_words
 
@@ -12,9 +12,10 @@ class Yell < ApplicationRecord
     end
   end
 
-
-
   with_options presence: true do
     validates :content,  length: { maximum: 300 }
   end
+
+
 end
+
