@@ -19,6 +19,9 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
 
+  has_many :active_lights, class_name: 'Light', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_lights, class_name: 'Light', foreign_key: 'visited_id', dependent: :destroy
+
 
   def follow(other_user)
     return if self == other_user
@@ -36,6 +39,16 @@ class User < ApplicationRecord
 
   def already_liked?(life)
     self.likes.exists?(life_id: life.id)
+  end
+
+  
+
+  def create_light_follow(current_user)
+    light = current_user.active_lights.new(
+      visited_id: id, 
+      action: 'follow'
+    )
+    light.save if light.valid?
   end
 
   

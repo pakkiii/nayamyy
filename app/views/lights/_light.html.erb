@@ -1,0 +1,7 @@
+<div class="notification-view">
+  <%= light_form(light) %><span class="moderate-font"><%= " (#{time_ago_in_words(light.created_at)}前)" %></span>
+  <br>
+  <% if !@yell.nil? %>
+    <p class="notification-comment"><%= @yell %></p>
+  <% end %>
+</div>

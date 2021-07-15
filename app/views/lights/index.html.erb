@@ -1,0 +1,9 @@
+<h3 class="text-center">通知</h3>
+
+<% if @lights.present? %>
+    <div class="users-index">
+        <%= render @lights %>
+    </div>
+<% else %>
+    <p>通知はありません</p>
+<% end %>

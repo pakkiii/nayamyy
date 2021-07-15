@@ -4,6 +4,9 @@ class LikesController < ApplicationController
   
   def create
     @like = current_user.likes.create(life_id: params[:life_id])
+
+    life = Life.find(params[:life_id])
+    life.create_light_like(current_user)
     redirect_back(fallback_location: root_path)
   end
 
@@ -12,4 +15,7 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_back(fallback_location: root_path)
   end
+
+
+
 end

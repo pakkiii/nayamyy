@@ -4,6 +4,7 @@ class RelationshipsController < ApplicationController
   def create
     @other_user = User.find(params[:follower])
     current_user.follow(@other_user)
+    @other_user.create_light_follow(current_user)
     redirect_back(fallback_location: root_path)
   end
 

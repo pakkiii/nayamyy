@@ -6,6 +6,7 @@ class YellsController < ApplicationController
     @yell = Yell.new(yell_params)
     @yell.user_id = current_user.id
     if @yell.save
+      @life.create_light_yell(current_user, @yell.id)
       redirect_to life_path(params[:life_id])
     else
       @yells = @life.yells

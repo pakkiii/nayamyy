@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_023316) do
+ActiveRecord::Schema.define(version: 2021_07_15_094257) do
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "room_id"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 2021_07_13_023316) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_entries_on_room_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
+  create_table "lights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "visitor_id", null: false
+    t.bigint "visited_id", null: false
+    t.bigint "life_id"
+    t.bigint "yell_id"
+    t.string "action"
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["life_id"], name: "index_lights_on_life_id"
+    t.index ["visited_id"], name: "index_lights_on_visited_id"
+    t.index ["visitor_id"], name: "index_lights_on_visitor_id"
+    t.index ["yell_id"], name: "index_lights_on_yell_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,7 +81,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_023316) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -95,6 +109,10 @@ ActiveRecord::Schema.define(version: 2021_07_13_023316) do
     t.index ["user_id"], name: "index_yells_on_user_id"
   end
 
+  add_foreign_key "lights", "lives"
+  add_foreign_key "lights", "users", column: "visited_id"
+  add_foreign_key "lights", "users", column: "visitor_id"
+  add_foreign_key "lights", "yells"
   add_foreign_key "likes", "lives"
   add_foreign_key "likes", "users"
   add_foreign_key "lives", "users"
