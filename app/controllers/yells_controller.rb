@@ -3,7 +3,7 @@ class YellsController < ApplicationController
   before_action :set_lives, only: [:create, :destroy]
 
   def create
-    @yell = Yell.new(yell_params)
+    @yell = Yell.create(yell_params)
     @yell.user_id = current_user.id
     if @yell.save
       @life.create_light_yell(current_user, @yell.id)

@@ -50,7 +50,7 @@ class Life < ApplicationRecord
   def create_light_yell(current_user, yell_id)
     temp_ids = Yell.where(life_id: id).select(:user_id).where.not("user_id = ? or user_id = ?", current_user.id, user_id).distinct 
     temp_ids.each do |temp_id|
-      save_light_yell!(current_user, yell_id, temp_id['user_id'])
+      save_light_yell(current_user, yell_id, temp_id['user_id'])
     end
     save_light_yell(current_user, yell_id, user_id)
   end

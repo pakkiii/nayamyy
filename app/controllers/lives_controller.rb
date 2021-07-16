@@ -10,6 +10,8 @@ class LivesController < ApplicationController
     @life = Life.find(params[:id])
     @yell = Yell.new
     @yells = @life.yells
+    
+    
   end
 
   def new

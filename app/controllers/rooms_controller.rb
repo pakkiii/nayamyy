@@ -17,4 +17,12 @@ class RoomsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+
+  def index
+    
+    @friends = Entry.all
+
+  end
+
+
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   resources :lives do
     resources :yells, only: [:index, :create, :destroy]
-    resources :likes, only: [:create, :destroy]
+    resource :like, only: [:create, :destroy]
   end
 
 end

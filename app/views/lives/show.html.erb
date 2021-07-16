@@ -69,11 +69,11 @@
           </div>
         <% else %>
           <% if current_user.already_liked?(@life) %>
-            <%= button_to life_like_path(@life), method: :delete, class: "like-icon"  do %>
+            <%= link_to life_like_path(@life), method: :DELETE, class: "like-icon"  do %>
               <i class="fas fa-heart"></i>
             <% end %>
           <% else %>
-            <%= button_to life_likes_path(@life), class: "cansel-icon" do %>
+            <%= link_to life_like_path(@life), method: :POST, class: "cansel-icon" do %>
               <i class="far fa-heart"></i>
             <% end %>
           <% end %>

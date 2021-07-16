@@ -4,4 +4,6 @@ class Light < ApplicationRecord
   belongs_to :visited, class_name: "User", optional: true
   belongs_to :life, optional: true
   belongs_to :yell, optional: true
+  belongs_to :message, optional: true
+  belongs_to :room, optional: true
 end

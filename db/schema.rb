@@ -26,11 +26,15 @@ ActiveRecord::Schema.define(version: 2021_07_15_094257) do
     t.bigint "visited_id", null: false
     t.bigint "life_id"
     t.bigint "yell_id"
+    t.bigint "message_id"
+    t.bigint "room_id"
     t.string "action"
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["life_id"], name: "index_lights_on_life_id"
+    t.index ["message_id"], name: "index_lights_on_message_id"
+    t.index ["room_id"], name: "index_lights_on_room_id"
     t.index ["visited_id"], name: "index_lights_on_visited_id"
     t.index ["visitor_id"], name: "index_lights_on_visitor_id"
     t.index ["yell_id"], name: "index_lights_on_yell_id"
@@ -110,6 +114,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_094257) do
   end
 
   add_foreign_key "lights", "lives"
+  add_foreign_key "lights", "messages"
+  add_foreign_key "lights", "rooms"
   add_foreign_key "lights", "users", column: "visited_id"
   add_foreign_key "lights", "users", column: "visitor_id"
   add_foreign_key "lights", "yells"

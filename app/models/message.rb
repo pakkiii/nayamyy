@@ -1,8 +1,12 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :room
+  
+  has_many :lights, dependent: :destroy
 
   validate :body_cannot_blacklist_words
+
+  
 
 
   def body_cannot_blacklist_words

@@ -13,6 +13,9 @@ module LightsHelper
       @yell_content =@yell.content
       @life_title =@yell.life.title
       tag.a(@visitor.name, href: user_path(@visitor)) + 'が' + tag.a("#{@life_title}", href: life_path(light.life_id)) + 'にコメントしました'
+    when 'dm' then
+      tag.a(light.visitor.name, href: user_path(@visitor)) + 'からの' + tag.a('新着メッセージがあります', href: room_path(light.room_id))
+    
     end
   end
 end
