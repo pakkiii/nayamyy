@@ -39,6 +39,7 @@
                       <i class="far fa-comments"></i>
                     </div>
 
+
                   <% end %>
                 <% else %>
                   <%= form_for @room do |f| %>
@@ -77,20 +78,50 @@
     <div class="my-lives-space">
       <%= render "shared/lives-card" %>
     </div>
-    <div class="main">
-      <label class="text-user">日別会員登録者数 (総会員数 : <%= @users.count %>)</label>
-      <div class="graph">
-        <%= line_chart @users_count, download: true, colors: ['#FF4F02'] %>
+
+    <div class="pie-space">
+      <div class="pie-chart-box">
+        <div class="dark-botton">
+        </div>
+        <%= pie_chart @pie,colors: ["rgb(0, 255, 13)",  "rgb(0, 255, 234)", "rgb(179, 255, 0)", "rgb(223, 223, 223)", "rgb(158, 158, 158)"]%>
+      </div>
+      <div class="pie-text">
+        <% if current_user.id == @user.id%>
+          <div class="pie-desc-1">Category</div>
+        <% else %>
+          <div class="pie-desc-2"><%= @user.name%>さんの悩みのカテゴリー割合</div>
+        <% end %>
+        <div class="pie-desc-2">
+          <div class="pie-chart-family"><i class="fas fa-home"></i></div>
+          Family
+        </div>
+        <div class="pie-desc-2">
+          <div class="pie-chart-work"><i class="fas fa-briefcase"></i></div>
+          Work
+        </div>
+        <div class="pie-desc-2">
+          <div class="pie-chart-school"><i class="fas fa-school"></i></div>
+          School
+        </div>
+        <div class="pie-desc-2">
+          <div class="pie-chart-private"><i class="fas fa-person-booth"></i></div>
+          Private
+        </div>
+        <div class="pie-desc-2">
+          <div class="pie-chart-other"><i class="fas fa-otter"></i></div>
+          Other
+        </div>
+
+
+          
       </div>
     </div>
-
-    <div class="test-4">
-      
-      <% if current_user.following?(@user) && @user.following?(current_user) %>
-        お互いフォロー
-      <% else %>
-        そうでもないよ
-      <% end %>
+    
+    <div class="main">
+      <label class="text-user">合計フォロワー数<%= @user.passive_relationships.count %></label>
+      <div class="graph">
+        <%= area_chart @user.passive_relationships.group_by_day(:created_at, format: "%d日").count, points: false, colors: ["rgba(0, 255, 0, 0.582)"] %>
+      </div>
     </div>
     
   </div>

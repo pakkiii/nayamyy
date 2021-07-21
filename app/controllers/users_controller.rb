@@ -8,6 +8,56 @@ class UsersController < ApplicationController
     @user_today = User.where(created_at: Date.today.all_day).count
     @users = User.all
 
+
+    family = 0
+    work = 0
+    school = 0
+    pribate = 0
+    other = 0 
+    @lives.each do |f|
+      
+      if f.tired_id == 2
+        family += 1
+      elsif f.tired_id == 3
+        work += 1
+      elsif f.tired_id == 4
+        school += 1
+      elsif f.tired_id == 5
+        pribate += 1
+      elsif f.tired_id == 6
+        other += 1
+      end
+      
+    end
+    @pie = {
+      "家族関係" =>  family,
+      "仕事" => work,
+      "学校" => school,
+      "プライベート" =>  pribate,
+      "それ以外" => other
+    }
+
+
+    lcount = 0
+    
+
+    @lives.each do |f|
+      
+      if f.likes.count != 0
+        lcount += f.likes.count
+      else
+
+      end
+    end
+
+    @lcount = lcount
+
+
+    
+
+
+
+    
     @currentUserEntry=Entry.where(user_id: current_user.id)
     @userEntry=Entry.where(user_id: @user.id)
     if @user.id == current_user.id
