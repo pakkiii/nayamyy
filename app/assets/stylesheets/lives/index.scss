@@ -1,14 +1,27 @@
 .all-index-space {
   background-color: rgb(202, 202, 202);
   width: 100%;
-  height: 1000px;
+  height: 2300px;
 }
 
 .main-index-page {
   width: 76%;
   margin: 0 12%;
-  border: solid black;
+  border-left: solid black;
+  border-right: solid black;
   height: 100%;
+}
+
+.index-top-1 {
+  width: 100%;
+  height: 60px;
+  font-size: 50px;
+  display: flex;
+}
+
+.index-top-1 i {
+  font-size: 45px;
+  margin: 15px 10px 0;
 }
 
 .lives-index-page {
@@ -17,17 +30,25 @@
   width: 100%;
 }
 .bx-wrapper{
-  width: 98%;
-  height: 800px;
+  margin: 30px 0;
+  width: 100%;
+  height: 600px;
+  border:none!important;
+  box-shadow: none!important;
 }
+
+
 
 .test-box-parent {
   width: 100%;
-  height: 800px;
-  background-color: aqua;
+  height: 600px;
+  background-color: rgb(202, 202, 202);
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  border-radius: 5px;
+  border: solid 3px grey;
+
 }
 
 .test-box-1 {

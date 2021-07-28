@@ -1,0 +1,56 @@
+<div class="search-main">
+  <div class="search-box">
+
+    <%= form_with(url: search_lives_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "悩みを検索", class: "search-input" %>
+      <%= button_tag type:'submit', class: "search-btn" do %>
+        <i class="fas fa-search-plus"></i>
+      <% end %>
+    <% end %>
+
+    <div class="search-icon-select">
+      <div class="edit-lives-icon" id="lives-line">
+        <i class="far fa-edit" id="lives"></i>
+      </div>
+      <div class="edit-users-icon" id="user-line">
+        <i class="fas fa-users" id="users"></i>
+      </div>
+    </div>
+
+    
+
+    <div class="search-lives-main" id="life">
+      <% if @lives.length != 0%>
+        <div class="search-body-space">
+          <p class="search-life-d">・検索に<%= @lives.length%>件ヒット</p>
+          <%= render "shared/show_life"%>
+        </div>
+      <% else %>
+        <div class="search-sorry">
+          <div class="sorry-sentence">
+            <a class="sorry-d">No Data</a>
+            <p class="sorry-p">・お探しになられていた悩みは見つかりませんでした。</p>
+            <p class="sorry-p">・検索ワードを短くすると見つけることができるかもしれません。</p>
+          </div>
+        </div>
+      <% end %>
+      <div class="search-user-main" id="user">
+        <% if @users.present? && @users.length != 0%>
+          <%= render "shared/show_user"%>
+        <% else %>
+          <div class="search-sorry">
+            <div class="sorry-sentence">
+              <a class="sorry-d">No User</a>
+              <p class="sorry-p">・該当するユーザーは見つかりませんでした。</p>
+              <p class="sorry-p">・検索ワードを短くすると見つけることができるかもしれません。</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    
+
+  </div>
+</div>

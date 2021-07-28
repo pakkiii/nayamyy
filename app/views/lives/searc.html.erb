@@ -1,0 +1,64 @@
+<div class="searc-main">
+  <div class="searc-box">
+
+    <%= form_with(url: search_lives_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "悩みを検索", class: "search-input" %>
+      <%= button_tag type:'submit', class: "search-btn" do %>
+        <i class="fas fa-search-plus"></i>
+      <% end %>
+    <% end %>
+
+    <div class="search-btn-box">
+
+      <div class="search-desc-2">
+        <%= link_to family_path, class: "search-icon" do %>
+        
+        <p>Family</p>
+        <% end %>
+      </div>
+
+      <div class="search-desc-2">
+        <%= link_to work_path, class: "search-icon" do %>
+        
+        Work
+        <% end %>
+      </div>
+
+      <div class="search-desc-2">
+        <%= link_to school_path, class: "search-icon" do %>
+        
+        School
+        <% end %>
+      </div>
+
+      <div class="search-desc-2">
+        <%= link_to school_path, class: "search-icon" do %>
+        
+        Private
+        <% end %>
+      </div>
+
+      <div class="search-desc-2">
+        <%= link_to family_path, class: "search-icon" do %>
+        
+        Other
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="search-index-first">
+      <div class="search-x">
+        <i class="far fa-edit" ></i>
+        <p class="searc-life-hint">自分が悩んでいるワードやカテゴリーで検索してみましょう。</p>
+        <p class="searc-life-hint">自分意外にも同じ悩みを持っていることを知ると、少しは元気が出るかもしれません。</p>
+
+      </div>
+      <div class="search-x">
+        <i class="fas fa-users"></i>
+        <p class="searc-life-hint">上記フォームからユーザーを検索することもできます。</p>
+      </div>
+    </div>
+
+  </div>
+</div>

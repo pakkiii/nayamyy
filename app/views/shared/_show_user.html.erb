@@ -1,0 +1,41 @@
+<div class="search-body-space">
+  <div class="search-lives-text">
+    <p class="search-life-d">・検索に<%= @users.length%>件ヒット</p>
+    <div class="search-u">
+      <% @users.each do |u|%>
+        <%= link_to user_path(u.id), class: "owner-pass" do %>
+          <div class="search-user-box">
+            <div class="user-icon-2">
+              <% if u.sex == 1 %>
+                <i class="fas fa-female"></i>
+              <% elsif u.sex == 2 %>
+                <i class="fas fa-male"></i>
+              <% else %>
+                <i class="fas fa-democrat"></i>
+              <% end %>
+            </div>
+            <h1 class="user-search-name"><%= u.name%></h1>
+            <div class="user-search-show">
+              <div class="search-user-a">
+                <p>投稿数</p><i class="far fa-edit"></i><i class="search-show-e"><%= u.lives.length%></i>
+              </div>
+
+              <% lcount = 0
+                u.lives.each do |f|
+                  if f.likes.count != 0
+                    lcount += f.likes.count
+                  end
+                end
+                @lcount = lcount
+              %>
+              <div class="search-user-a">
+                <p>総共感数</p><i class="far fa-heart"></i><i class="search-show-e"><%= @lcount%></i>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

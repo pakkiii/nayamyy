@@ -12,6 +12,7 @@ require('jquery')
 import "chartkick/chart.js"
 
 require("../test.js")
+require("../search.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

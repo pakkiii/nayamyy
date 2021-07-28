@@ -1,0 +1,199 @@
+// Place all the styles related to the likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.search-main {
+  width: 100%;
+  background-color: rgb(202, 202, 202);
+}
+
+.search-box {
+  width: 76%;
+  margin: 0 12%;
+  border-right: solid black;
+  border-left: solid black;
+  padding-top: 50px;
+}
+
+
+
+.search-form {
+  height: 50px;
+  width: 60%;
+  display: flex;
+  margin: 0 20%;
+}
+
+.search-input {
+  width: 400px;
+  height: 92%;
+  margin: auto 0 0 0;
+  background-color: rgb(202, 202, 202);
+  border: solid 2px rgb(53, 53, 53);
+  padding-left: 30px;
+  border-radius: 10px;
+}
+
+.search-btn {
+  width: 60px;
+  height: 100%;
+  font-size: 45px;
+  border: none;
+  color: rgb(59, 59, 59);
+  background-color: rgb(202, 202, 202);
+}
+
+.search-icon-select {
+  width: 100%;
+  height: 160px;
+  margin: 15px 0;
+  font-size: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-lives-icon {
+  height: 160px;
+  width: 150px;
+  text-align: center;
+  border-bottom: solid grey 10px;
+}
+
+.edit-users-icon {
+  height: 160px;
+  width: 150px;
+  text-align: center;
+  border-bottom: none;
+}
+
+
+
+
+.search-lives-main {
+  background-color: rgb(202, 202, 202);
+  width: 100%;
+  height: 800px;
+  position: relative;
+}
+.search-user-main {
+  background-color: rgb(202, 202, 202);
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+
+.search-body-space {
+  width: 100%;
+}
+
+
+.search-te {
+  height: 600px;
+  overflow: scroll;
+  width: 100%;
+  border-top: solid 2px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  -ms-overflow-style: none;
+}
+
+.search-te::-webkit-scrollbar {  
+  display:none;
+}
+
+.search-sorry {
+  height: 200px;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.sorry-d {
+  font-size: 60px;
+  margin-left: 130px;
+  border-bottom: black solid 3px;
+}
+
+.sorry-p {
+  font-size: 20px;
+  margin-left: 130px;
+}
+
+.search-life-d {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.search-u {
+  height: 600px;
+  overflow: scroll;
+  width: 100%;
+  border-top: solid 2px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
+  -ms-overflow-style: none;
+}
+
+.search-u::-webkit-scrollbar {  
+  display:none;
+}
+
+.search-user-box {
+  height: 70px;
+  width: 90%;
+  background-color: rgb(95, 95, 95);
+  display: flex;
+  margin: 20px 5%;
+  color: white;
+  border-radius: 10px;
+}
+
+.user-icon-2 {
+  height: 59px;
+  width: 59px;
+  border-radius: 100%;
+  font-size: 40px;
+  border: solid gray 3px;
+  text-align: center;
+  
+}
+
+.user-search-name {
+  margin-left: 30px;
+  width: 350px;
+  font-size: 40px;
+  
+}
+
+.user-search-show {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-user-a {
+  height: 100%;
+  width: 45%;
+  font-size: 15px;
+  text-align: center;
+}
+
+.search-user-a i {
+  font-size: 24px;
+}
+
+.search-show-e {
+  margin-left: 4px;
+}
+
+
+
+
+
+

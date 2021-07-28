@@ -1,15 +1,78 @@
 <div class="all-index-space">
   <div class="main-index-page">
+
+
+    <div class="index-top-1">
+      <i class="far fa-comment-alt"></i><p>New</p>
+    </div>
     <div class="bxslider">
       <div class="test-box-parent">
-        <%= render "shared/lives-puts-card" %>
+        <% @first = @lives.slice(0,8)%>
+        <% @first.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
       </div>
       <div class="test-box-parent">
-        <%= render "shared/lives-puts-card" %>
+        <% @second = @lives.slice(8,8)%>
+        <% @second.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
       </div>
-      
+      <div class="test-box-parent">
+        <% @third = @lives.slice(16,8)%>
+        <% @third.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
     </div>
 
+    <div class="index-top-1">
+      <i class="far fa-heart"></i><p>Like</p>
+    </div>
+    <div class="bxslider">
+      <div class="test-box-parent">
+        <% @first = @count.slice(0,8)%>
+        <% @first.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+      <div class="test-box-parent">
+        <% @second = @count.slice(8,8)%>
+        <% @second.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+      <div class="test-box-parent">
+        <% @third = @count.slice(16,8)%>
+        <% @third.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="index-top-1">
+      <i class="far fa-comment"></i><p>Yell</p>
+    </div>
+    <div class="bxslider">
+      <div class="test-box-parent">
+        <% @first = @yell.slice(0,8)%>
+        <% @first.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+      <div class="test-box-parent">
+        <% @second = @yell.slice(8,8)%>
+        <% @second.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+      <div class="test-box-parent">
+        <% @third = @yell.slice(16,8)%>
+        <% @third.first(8).each do |life| %>
+          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% end %>
+      </div>
+    </div>
     
   </div>
 </div>

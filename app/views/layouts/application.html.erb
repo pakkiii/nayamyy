@@ -16,11 +16,9 @@
     <script>
       $(document).ready(function(){
         $('.bxslider').bxSlider({
-          auto: true,
-          speed: 1000,
-          useCSS: false,
-          minSlides: 3,
-          maxSlides: 3,
+          speed: 600,
+          minSlides: 2,
+          maxSlides: 2,
           touchEnabled: false
         });
       });
@@ -29,33 +27,45 @@
   </head>
 
   <header>
-    <div class="app-icon-box">
-      <%= link_to( "/", class: "app-title" ) do %>
-        <h1 class="title">
-          <span>L</span>
-          <span>i</span>
-          <span>f</span>
-          <span>e</span>
-          <span>&nbsp;</span>
-          <span>C</span>
-          <span>o</span>
-          <span>u</span>
-          <span>n</span>
-          <span>t</span>
-        </h1>
-      <% end %>
-    </div>
-    <%= link_to 'ログアウト' ,destroy_user_session_path, method: :delete, class: "logout" %>
-    <div class="left-icon">
-      <%= link_to(new_life_path, class: 'top-icon-btn') do %>
-        <%= image_tag 'new-lives.png' , size: '50x50' ,class: "top-icon" %>
-      <% end %>
-      <%= link_to(lights_path) do %>
-        <%= image_tag 'tuuti.png' , size: '50x50' ,class: "top-icon" %>
-      <% end %>
-      <%= link_to(rooms_path) do %>
-        <%= image_tag 'DM.png' , size: '50x50' ,class: "top-icon" %>
-      <% end %>
+    <div class="top-header-space">
+      <div class="app-icon-box">
+        <%= link_to( "/", class: "app-title" ) do %>
+          <h1 class="title">
+            <span>L</span>
+            <span>i</span>
+            <span>f</span>
+            <span>e</span>
+            <span>&nbsp;</span>
+            <span>C</span>
+            <span>o</span>
+            <span>u</span>
+            <span>n</span>
+            <span>t</span>
+          </h1>
+        <% end %>
+      </div>
+      
+
+      <div class="left-icon">
+
+        <%= link_to(new_life_path, class: "logout") do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+
+        <%= link_to(lights_path, class: "logout") do %>
+          <i class="far fa-bell"></i>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= link_to(destroy_user_session_path, method: :delete, class: "logout") do %>
+            <i class="fas fa-door-open"></i>
+          <% end %>
+        <% else %>
+          <%= link_to(new_user_session_path, class: "logout") do %>
+            <i class="fas fa-door-closed"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </header>
   <body>
@@ -63,21 +73,31 @@
   </body>
   <footer>
     <% if user_signed_in? %>
+
       <%= link_to("/", class: 'top-icon-btn') do %>
         <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
-      <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+      
+      <%= link_to(searc_path) do %>
+        <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+      <% end %>
+
       <%= link_to("/users/#{current_user.id}", class: 'top-icon-btn') do %>
         <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
+
     <% else %>
+
       <%= link_to("/", class: 'top-icon-btn') do %>
         <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
+
       <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+
       <%= link_to("/", class: 'top-icon-btn') do %>
         <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
+
     <% end %>
   </footer>
 </html>

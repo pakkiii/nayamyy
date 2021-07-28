@@ -6,6 +6,7 @@
 .dm-got {
   width: 100%;
   background-color: rgb(202, 202, 202);
+  height: 800px;
 }
 
 .dm-main {
@@ -15,14 +16,16 @@
   margin: 0 12%;
   padding-bottom: 60px;
   background-color: rgb(202, 202, 202);
+  height: 100%;
+
 }
 
 .dm-acount-name {
   width: 100%;
-  height: 100px;
+  height: 80px;
   text-align: center;
-  padding-top: 50px;
 }
+
 
 
 .dm-acount-font {
@@ -31,10 +34,22 @@
   color: #555;
   border-bottom: 3px solid gray;
   padding-bottom: 6px;
+
 }
 
 .dm-parent {
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  border-top: solid 2px gray;
 }
+
+.dm-parent::-webkit-scrollbar {  
+  display:none;
+}
+
+
 
 .another-acount-box {
   display: flex;
@@ -140,6 +155,7 @@
 }
 
 .dm-text-space {
+  margin-top: 10px;
   height: 96%;
   width: 82%;
   border: solid 3px gray;
@@ -153,7 +169,7 @@
   font-size: 60px;
   color: white;
   background-color: gray;
-  
+  margin-top: 10px;
 }
 
 .dm-submit-btn p {

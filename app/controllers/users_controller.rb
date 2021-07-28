@@ -39,17 +39,12 @@ class UsersController < ApplicationController
 
 
     lcount = 0
-    
-
     @lives.each do |f|
       
       if f.likes.count != 0
         lcount += f.likes.count
-      else
-
       end
     end
-
     @lcount = lcount
 
 

@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :rooms, through: :entries
 
   has_many :active_lights, class_name: 'Light', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_lights, class_name: 'Light', foreign_key: 'visited_id', dependent: :destroy
@@ -49,6 +50,14 @@ class User < ApplicationRecord
       action: 'follow'
     )
     light.save if light.valid?
+  end
+
+  def self.search(search)
+    if search != ""
+      User.where('name LIKE?', "%#{search}%")
+    else
+      User.all
+    end
   end
 
   

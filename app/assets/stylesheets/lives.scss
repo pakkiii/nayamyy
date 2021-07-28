@@ -4,35 +4,40 @@
 
 
 header {
-  position: fixed;
-  top: 0; 
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: black;
-  display: flex;
-  justify-content: space-around;
   padding: 20px;
-  z-index: 100;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.top-header-space {
+  width: 76%;
+  margin: 0 12%;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 90px;
   background-color: black;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  box-sizing: border-box;
+  padding: 10px 20px;
 }
 
+
 body {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  height: 100%;
 }
 
 .app-icon-box {
-  width: 20%;
+  width: 300px;
 }
 .app-title { 
   color: white;
@@ -42,9 +47,14 @@ body {
 }
 
 .left-icon {
-  width: 40%;
+  width: 30%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 100%;
 }
 
+.logout {
+  font-size: 33px;
+  color: white;
+}
 
