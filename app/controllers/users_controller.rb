@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @lives = @user.lives.order("created_at DESC")
-    @users_count = User.group_by_day(:created_at).size
-    @user_today = User.where(created_at: Date.today.all_day).count
     @users = User.all
 
 
