@@ -76,10 +76,12 @@
     </div>
 
     <div class="my-lives-space">
-      <%= render "shared/lives-card" %>
+      <% @lives.each do |life| %>
+        <%= render partial: "shared/lives-card", locals: { life: life } %>
+      <%end %>
     </div>
-
     <div class="pie-space">
+
       <div class="pie-chart-box">
         <div class="dark-botton">
         </div>
@@ -118,10 +120,12 @@
     </div>
     
     <div class="main">
-      <label class="text-user">合計フォロワー数<%= @user.passive_relationships.count %></label>
-      <div class="graph">
-        <%= area_chart @user.passive_relationships.group_by_day(:created_at, format: "%d日").count, points: false, colors: ["rgba(0, 255, 0, 0.582)"] %>
-      </div>
+      <% if @user.passive_relationships.count != 0 %>
+        <label class="text-user">合計フォロワー数<%= @user.passive_relationships.count %></label>
+        <div class="graph">
+          <%= area_chart @user.passive_relationships.group_by_day(:created_at).count, points: false, colors: ["rgba(0, 255, 0, 0.582)"] %>
+        </div>
+      <% end %>
     </div>
     
   </div>

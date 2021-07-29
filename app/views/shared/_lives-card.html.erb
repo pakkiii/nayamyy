@@ -1,58 +1,56 @@
-<% @lives.each do |life| %>
-
-  <div class=lives-card>
-    <div class="lives-card-space">
-      <div class="card-1">
-        <% if life.tired_id == 2%>
-          <i class="fas fa-home"></i>
-        <%elsif life.tired_id ==3 %>
-          <i class="fas fa-briefcase"></i>
-        <%elsif life.tired_id ==4 %>
-          <i class="fas fa-school"></i>
-        <%elsif life.tired_id ==5 %>
-          <i class="fas fa-person-booth"></i>
-        <%elsif life.tired_id ==6 %>
-          <i class="fas fa-otter"></i>
-        <% end %>
+<div class=lives-card>
+  <div class="lives-card-space">
+    <div class="card-1">
+      <% if life.tired_id == 2%>
+        <i class="fas fa-home"></i>
+      <%elsif life.tired_id ==3 %>
+        <i class="fas fa-briefcase"></i>
+      <%elsif life.tired_id ==4 %>
+        <i class="fas fa-school"></i>
+      <%elsif life.tired_id ==5 %>
+        <i class="fas fa-person-booth"></i>
+      <%elsif life.tired_id ==6 %>
+        <i class="fas fa-otter"></i>
+      <% end %>
+    </div>
+    <div class="card-2">
+      <div class="card-2-title">
+        <p>Title</p>
       </div>
-      <div class="card-2">
-        <div class="card-2-title">
-          <p>Title</p>
-        </div>
-        <div class="card-2-title-2">
-          <%= life.title.truncate(10)%>
-        </div>
-      </div>
-      <div class="card-3">
-        <div class="card-comment">
-          <i class="far fa-comment"></i>
-          <%= life.yells.count%>
-        </div>
-        <div class="card-comment">
-          <i class="far fa-heart"></i>
-          <%= life.likes.count%>
-        </div>
-      </div>
-      <div class="card-4">
-        <%= time_ago_in_words(life.created_at) %>前
+      <div class="card-2-title-2">
+        <%= life.title.truncate(10)%>
       </div>
     </div>
-    <%= link_to life_path(life.id), {class: "nav-link"} do %>
-      <div class="lives-text-show">
-        <div class="lives-show-mark">
-          <i class="fas fa-home"></i>
-        </div>
-        <div class="lives-text-second">
-          <p>悩み</p>
-          <%= life.bad_thing.truncate(15) %>
-        </div>
-        <div class="lives-text-second">
-          <p>嬉しいこと</p>
-          <%= life.hope.truncate(15) %>
-        </div>
+    <div class="card-3">
+      <div class="card-comment">
+        <i class="far fa-comment"></i>
+        <%= life.yells.count%>
       </div>
-    <% end %>
-    
+      <div class="card-comment">
+        <i class="far fa-heart"></i>
+        <%= life.likes.count%>
+      </div>
+    </div>
+    <div class="card-4">
+      <%= time_ago_in_words(life.created_at) %>前
+    </div>
   </div>
+  <%= link_to life_path(life.id), {class: "nav-link"} do %>
+    <div class="lives-text-show">
+      <div class="lives-show-mark">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="lives-text-second">
+        <p>悩み</p>
+        <%= life.bad_thing.truncate(15) %>
+      </div>
+      <div class="lives-text-second">
+        <p>嬉しいこと</p>
+        <%= life.hope.truncate(15) %>
+      </div>
+    </div>
+  <% end %>
+  
+</div>
 
-<% end %>
+
