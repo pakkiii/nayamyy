@@ -72,32 +72,22 @@
     <%= yield %>
   </body>
   <footer>
+    <%= link_to("/", class: 'top-icon-btn') do %>
+      <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
+    <% end %>
+    
+    <%= link_to(searc_path) do %>
+      <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
+    <% end %>
+    
     <% if user_signed_in? %>
-
-      <%= link_to("/", class: 'top-icon-btn') do %>
-        <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
-      <% end %>
-      
-      <%= link_to(searc_path) do %>
-        <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
-      <% end %>
-
       <%= link_to("/users/#{current_user.id}", class: 'top-icon-btn') do %>
         <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
-
     <% else %>
-
-      <%= link_to("/", class: 'top-icon-btn') do %>
-        <%= image_tag 'home.png' , size: '60x60' ,class: "under-icon" %>
-      <% end %>
-
-      <%= image_tag 'search-word.png' , size: '60x60' ,class: "under-icon" %>
-
       <%= link_to("/", class: 'top-icon-btn') do %>
         <%= image_tag 'my-page.png' , size: '60x60' ,class: "under-icon" %>
       <% end %>
-
     <% end %>
   </footer>
 </html>
