@@ -7,21 +7,27 @@
     </div>
     <div class="bxslider">
       <div class="test-box-parent">
-        <% @first = @lives.slice(0,8)%>
-        <% @first.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 1 %>
+          <% @first = @lives.slice(0,8)%>
+          <% @first.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @second = @lives.slice(8,8)%>
-        <% @second.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 9 %>
+          <% @second = @lives.slice(8,8)%>
+          <% @second.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @third = @lives.slice(16,8)%>
-        <% @third.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 17 %>
+          <% @third = @lives.slice(16,8)%>
+          <% @third.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -31,21 +37,27 @@
     </div>
     <div class="bxslider">
       <div class="test-box-parent">
-        <% @first = @count.slice(0,8)%>
-        <% @first.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 1 %>
+          <% @first = @count.slice(0,8)%>
+          <% @first.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @second = @count.slice(8,8)%>
-        <% @second.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 9 %>
+          <% @second = @count.slice(8,8)%>
+          <% @second.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @third = @count.slice(16,8)%>
-        <% @third.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 17 %>
+          <% @third = @count.slice(16,8)%>
+          <% @third.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -55,21 +67,27 @@
     </div>
     <div class="bxslider">
       <div class="test-box-parent">
-        <% @first = @yell.slice(0,8)%>
-        <% @first.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 1 %>
+          <% @first = @yell.slice(0,8)%>
+          <% @first.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @second = @yell.slice(8,8)%>
-        <% @second.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 9 %>
+          <% @second = @yell.slice(8,8)%>
+          <% @second.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
       <div class="test-box-parent">
-        <% @third = @yell.slice(16,8)%>
-        <% @third.first(8).each do |life| %>
-          <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+        <% if @lives.count >= 17 %>
+          <% @third = @yell.slice(16,8)%>
+          <% @third.first(8).each do |life| %>
+            <%= render partial: "shared/lives-puts-card", locals: { life: life } %>
+          <% end %>
         <% end %>
       </div>
     </div>

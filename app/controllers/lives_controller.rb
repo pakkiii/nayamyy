@@ -27,6 +27,7 @@ class LivesController < ApplicationController
     end
   end
 
+  
   def destroy
     @life = Life.find(params[:id])
     @life.destroy
