@@ -118,6 +118,14 @@
           
       </div>
     </div>
+    <div class="main">
+      <% if @user.passive_relationships.count != 0 %>
+        <label class="text-user">合計フォロワー数<%= @user.passive_relationships.count %></label>
+        <div class="graph">
+          <%= area_chart @user.passive_relationships.group_by_day(:created_at, format: "%d日").count, points: false, colors: ["rgba(0, 255, 0, 0.582)"] %>
+        </div>
+      <% end %>
+    </div>
     
     
     
