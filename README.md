@@ -1,24 +1,4 @@
-# README
+# アプリの概要
+プログラミングスクールを卒業し、最初に作成したアプリを一から作り直しました。
+前回のLife countをすでにご参照いただいている方は下記データベース設計からご覧ください。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
