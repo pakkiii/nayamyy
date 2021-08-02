@@ -1,5 +1,5 @@
 class YellsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  #before_action :authenticate_user!, only: [:create]
   before_action :set_lives, only: [:create, :destroy]
 
   def create
