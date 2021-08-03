@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @lives = @user.lives.order("created_at DESC")
     @users = User.all
 
-
     family = 0
     work = 0
     school = 0
