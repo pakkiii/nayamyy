@@ -51,5 +51,5 @@ production:
   <<: *default
   database: nayamyy_production
   username: root
-  password: lebron1903
+  password: ENV['DATABASE_PASSWORD_PRODUCTION']
   socket: /var/lib/mysql/mysql.sock
