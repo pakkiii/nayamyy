@@ -1,33 +1,30 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Log in</h2>
-      <h5>アカウントをお持ちですか？</h5>
-      <%= render "devise/shared/links"%>
+<div class="login-space">
+  <div class="welcom-home">
+    <div class="login-account-image">
+      <i class="fas fa-person-booth"></i>
     </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email, autofocus: true%>
-          </div>
-          <div class='field'>
-            <div class='field-label'>
-              <%= f.label :password%>
-              <i>(英数字6文字以上)</i>
-            </div>
-            <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
-            </div>
-          </div>
-          <div class='actions'>
-            <%= f.submit "Log in", class: 'btn'%>
-          </div>
+    <div class="login-account-content">
+      <h1>今日もお疲れ様でした</h1>
+      <h1>以下の情報を記入してログインください</h1>
+    </div>
+  </div>
+  <div class="login-session-box">
+    <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
+      <div class="login-email">
+        <i class="far fa-envelope"></i>
+        <div class="emai-box">
+          <%= f.email_field :email, autofocus: true, class:"email-label"%>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <div class="login-email">
+        <i class="fas fa-unlock-alt"></i>
+        <div class="emai-box">
+          <%= f.password_field :password, autocomplete: "off", class:"email-label"%>
+        </div>
+      </div>
+      <div class="login-email">
+        <%= f.submit "Log in", class: 'btn'%>
+      </div>
+    <% end %>
   </div>
 </div>

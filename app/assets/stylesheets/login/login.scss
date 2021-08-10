@@ -1,0 +1,63 @@
+.login-space {
+  height: 600px;
+  width: 80%;
+  background-color: rgb(202, 202, 202);
+  margin: 0 10%;
+  padding: 100px 0;
+  border-left: gray solid 3px;
+  border-right: gray solid 3px;
+}
+
+.welcom-home {
+  width: 100%;
+  background-color: rgb(236, 236, 236);
+  height: 150px;
+  font-size: xx-large;
+  display: flex;
+}
+
+.login-account-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  background-color: rgb(58, 58, 58);
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  margin: 30px 60px;
+}
+
+.login-account-content {
+  color: gray;
+  font-size: 28px;
+}
+
+.login-account-content h1 {
+  border-bottom: solid 2px gray;
+  margin: 13px 20px;
+  
+}
+
+.login-session-box {
+  width: 100%;
+  height: 300px;
+}
+
+.login-email {
+  background-color: lightblue;
+  height: 100px;
+  width: 80%;
+  margin: 20px 9%;
+  font-size: 60px;
+  border-bottom: gray solid 3px;
+}
+
+.btn {
+  font-size: medium;
+}
+
+
+.email-label {
+  font-size: medium;
+}
+
